@@ -1,0 +1,130 @@
+@charset 'utf-8';
+
+$blue:rgb(0, 153, 255);
+
+@mixin non-select {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+@mixin border-boxes{
+    border:solid 1px $blue;
+    border-radius: 10px 10px;
+    color:$blue;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color:$blue;
+    color: aliceblue;
+    font-weight: bold;
+    padding: 15px;
+    text-align: center;
+    @include non-select();
+}
+
+.cities-container{
+    border-bottom: 1px solid gray;
+    
+}
+
+.countries-container, .cities-container {
+    @include non-select();
+    color: red;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    .country {
+        width: 150px;
+    }
+    .city:hover{
+        cursor: pointer;
+    }
+    .city{
+        height: 25px;
+        padding: 5px;
+        display: block;
+    }
+    .city *{
+        position: relative;
+        bottom: 15px;
+    }
+    .country, .city {
+        @include border-boxes();
+        text-align: center;
+        margin: 30px;
+        
+    }
+}
+
+
+.juego{
+    border:solid 1px gray;
+    min-height: 300px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "juego juego juego mapa mapa"
+        "juego juego juego mapa mapa"
+        "datos datos datos datos datos";
+}
+
+.juego {
+    grid-area: juego;
+}
+
+.datos {
+    grid-area: datos;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#chartIntentos, #chartOcurrencias{
+    width: 800px;
+    height: 250px;
+}
+
+.mapa {
+    grid-area: mapa;
+}
+
+#mapid{
+    min-height: 600px;
+}
+
+.button-area{
+    @include non-select();
+    border:solid 1px $blue;
+    font-weight: bold;
+    background-color: rgba(0, 217, 255, 0.274);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    button{
+        @include border-boxes();
+        background-color: rgb(247, 236, 223);
+    }
+    button:hover{
+        background-color: rgba(0, 0, 0, 0.267);
+    }
+    button:active{
+        background-color:black;
+        color:white;
+    }
+    button:disabled{
+        background-color: rgba(108, 108, 109, 0.548);
+        color:rgba(35, 25, 182, 0.76);
+        border-color: rgba(53, 45, 163, 0.849);
+    }
+}

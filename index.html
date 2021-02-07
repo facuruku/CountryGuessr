@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciudades y paÃ­ses</title>
+
+
+    <!-- Leaflet -->
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+
+    <!-- jquery-ui -->
+    <link type="text/css" href="jquery-ui-1.11.4.custom/jquery-ui.css" rel="Stylesheet" id="linkestilo" />
+
+    
+    <!-- Custom css -->
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+    <header>Ciudades y paí­ses</header>
+    
+    <article class="grid-container">
+        <section class="juego">
+            <div class="button-area">
+                <button id="nuevaPartida">Nueva Partida</button>
+                <p>Tiempo: <span id="timer">0</span>s</p>
+            </div>
+            <div class="cities-container">
+                <template id="cityTemplate">
+                    <div class="city" data-code="">
+                        <h3></h3>
+                    </div>
+                </template>
+            </div>
+            <div class="countries-container">
+                <template id="countryTemplate">
+                    <div class="country" data-code="">
+                        <h3></h3>
+                        <div></div>
+                    </div>
+                </template>
+            </div>
+            
+        </section>
+
+        <section class="mapa">
+             <div id="mapid"></div>
+        </section>
+        <section class="datos">
+             <div id="chartIntentos"></div>
+             <div id="chartOcurrencias"></div>
+        </section>
+
+    </article>
+
+       <!-- jquery js -->
+    <script src="jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+    <script src="jquery-ui-1.11.4.custom/jquery-ui.js"></script>  	
+
+      <!--Load the AJAX API Google Charts-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  
+
+    <!-- Custom js -->
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>
