@@ -24,14 +24,16 @@ header {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  width: 98%;
+  min-height: 42%;
   color: red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -41,6 +43,10 @@ header {
   width: 150px;
 }
 
+.countries-container .country h3, .cities-container .country h3 {
+  border-bottom: 1px solid #0099ff;
+}
+
 .countries-container .city:hover, .cities-container .city:hover {
   cursor: pointer;
 }
@@ -48,12 +54,12 @@ header {
 .countries-container .city, .cities-container .city {
   height: 25px;
   padding: 5px;
-  display: block;
 }
 
 .countries-container .city *, .cities-container .city * {
   position: relative;
   bottom: 15px;
+  display: block;
 }
 
 .countries-container .country, .countries-container .city, .cities-container .country, .cities-container .city {
@@ -62,6 +68,10 @@ header {
   color: #0099ff;
   text-align: center;
   margin: 30px;
+}
+
+.countries-container {
+  margin-top: 20px;
 }
 
 .juego {
